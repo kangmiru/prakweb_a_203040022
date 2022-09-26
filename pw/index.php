@@ -5,7 +5,7 @@ $buku = query("SELECT * FROM buku");
 ?>
 <html>
 <div class="container">
-    <h2>Daftar Buku</h2>
+    <h2>Daftar Buku Terpopuler</h2>
 </div>
 
 <div class="container">
