@@ -90,7 +90,7 @@ function tambah($data){
 function ubah($data){
     $conn = koneksi();
     
-    $id = $data['id'];
+    $id = $data['Id'];
     $gambar_lama = htmlspecialchars($data['gambar_lama']);
     $nama = htmlspecialchars($data['judul']);
     $harga = htmlspecialchars($data['penulis']);
@@ -110,7 +110,7 @@ function ubah($data){
                 judul = '$judul',
                 penulis = '$penulis',
                 penerbit =  '$penerbit',
-                WHERE id = $id ";
+                WHERE Id = $Id ";
     
     mysqli_query($conn, $query) or die(mysqli_error($conn));
     
@@ -120,12 +120,12 @@ function ubah($data){
 function hapus($id){
     $conn = koneksi();
 
-    $b = query("SELECT * FROM buku WHERE id = $id");
+    $b = query("SELECT * FROM buku WHERE Id = $Id");
     if ($b['gambar'] != 'no-image.jpg') {
         unlink("../assets/img/" .$b['gambar']);
     }
     
-    mysqli_query($conn, "DELETE FROM buku WHERE id = $id") or die(mysqli_error($conn));
+    mysqli_query($conn, "DELETE FROM buku WHERE Id = $Id") or die(mysqli_error($conn));
     
     return mysqli_affected_rows($conn);
 }
