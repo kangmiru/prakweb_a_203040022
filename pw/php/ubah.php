@@ -2,14 +2,14 @@
 
 require 'function.php';
 
-if (!isset($_GET['Id'])) {
+if (!isset($_GET['id'])) {
     header("location: ../index.php");
     exit;
 }
 
-$Id =$_GET['Id'];
+$id =$_GET['id'];
 
-$b = query("SELECT * FROM buku WHERE Id = $Id");
+$b = query("SELECT * FROM buku WHERE id = $id");
 
 if (isset($_POST['ubah']) > 0) {
     if (ubah($_POST)) {
@@ -41,7 +41,7 @@ if (isset($_POST['ubah']) > 0) {
     <h3>Silakan Ubah Data</h3>
 
     <form action="" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="Id" value="<?= $b['Id'] ;?>">
+        <input type="hidden" name="id" value="<?= $b['id'] ;?>">
         <ul>
             <li>
                 <input type="hidden" name="gambar_lama" value="<?= $b['gambar'] ;?>">

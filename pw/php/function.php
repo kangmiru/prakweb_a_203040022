@@ -90,11 +90,11 @@ function tambah($data){
 function ubah($data){
     $conn = koneksi();
     
-    $id = $data['Id'];
+    $Id = $data['id'];
     $gambar_lama = htmlspecialchars($data['gambar_lama']);
-    $nama = htmlspecialchars($data['judul']);
-    $harga = htmlspecialchars($data['penulis']);
-    $deskripsi = htmlspecialchars($data['penerbit']);
+    $judul = htmlspecialchars($data['judul']);
+    $penulis = htmlspecialchars($data['penulis']);
+    $penerbit = htmlspecialchars($data['penerbit']);
 
     $gambar = upload();
     if (!$gambar) {
@@ -109,8 +109,8 @@ function ubah($data){
                 gambar = '$gambar',
                 judul = '$judul',
                 penulis = '$penulis',
-                penerbit =  '$penerbit',
-                WHERE Id = $Id ";
+                penerbit =  '$penerbit'
+                WHERE id = $id ";
     
     mysqli_query($conn, $query) or die(mysqli_error($conn));
     
@@ -120,12 +120,12 @@ function ubah($data){
 function hapus($id){
     $conn = koneksi();
 
-    $b = query("SELECT * FROM buku WHERE Id = $Id");
+    $b = query("SELECT * FROM buku WHERE id = $id");
     if ($b['gambar'] != 'no-image.jpg') {
         unlink("../assets/img/" .$b['gambar']);
     }
     
-    mysqli_query($conn, "DELETE FROM buku WHERE Id = $Id") or die(mysqli_error($conn));
+    mysqli_query($conn, "DELETE FROM buku WHERE id = $id") or die(mysqli_error($conn));
     
     return mysqli_affected_rows($conn);
 }

@@ -58,8 +58,8 @@ $buku = query("SELECT * FROM buku");
         <tr>
             <td><?= $i++ ;?></td>
             <td>
-              <a href="php/hapus.php?Id=<?php $b['Id'] ;?>" onclick="return comfirm('apakah anda yakin??;')"><button class="hapus">Hapus</button></a>
-              <a href="php/ubah.php?Id=<?php $b['Id'] ;?>"><button class="ubah">Ubah</button></a>
+              <a href="php/hapus.php?id=<?php $b['id'] ;?>" onclick="return comfirm('apakah anda yakin??;')"><button class="hapus">Hapus</button></a>
+              <a href="php/ubah.php?id=<?php $b['id'] ;?>"><button class="ubah">Ubah</button></a>
             </td>
             <td><img src="img/<?= $b['gambar'] ;?>" alt=""></td>
             <td><?= $b['judul'] ;?></td>
