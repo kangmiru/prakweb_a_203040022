@@ -79,7 +79,7 @@ function tambah($data){
     
     $query = "INSERT INTO Buku
                 VALUES
-                ('','$gambar','$judul','$penulis','$penerbit');
+                ('','$judul','$penulis','$penerbit','$gambar');
                 ";
     
     mysqli_query($conn, $query) or die(mysqli_error($conn));
