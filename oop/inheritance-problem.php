@@ -30,6 +30,7 @@ class Produk{
         }else if ($this->tipe =="Game") {
             $str .= " ~ {$this->waktuMain} Jam.";
         }
+        
         return $str;
     }
 }
