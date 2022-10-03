@@ -6,7 +6,7 @@ class Produk{
             $penerbit,
             $harga;
 
-    public function __construct($judul = "judul", $penulis = "penulis", $penerbit="penerbit",$harga="harga"){
+    public function __construct($judul = "judul", $penulis = "penulis", $penerbit="penerbit",$harga=0){
         $this->judul = $judul;
         $this->penulis = $penulis;
         $this->penerbit = $penerbit;
@@ -28,7 +28,7 @@ class CetakInfoProduk {
 
 
 
-$produk1 = new Produk("Naruto","Masashi Kishimoto","shonen jump","30000");
+$produk1 = new Produk("Naruto","Masashi Kishimoto","shonen jump",30000);
 $produk2 = new Produk("Uncharted", "Niel Druckmann","Sony Computer",250000);
 $produk3 = new Produk("Dragon Ball");
 
