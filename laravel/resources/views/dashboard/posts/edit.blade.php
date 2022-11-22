@@ -6,7 +6,7 @@
 </div>
 
 <div class="col-lg-8">
-    <form method="post" action="/dashboard/posts/{{ $post->slug }}" class="mb-5">
+    <form method="post" action="/dashboard/posts/{{ $post->slug }}" class="mb-5" enctype="multipart/form-data">
     @method('put')    
     @csrf
       <div class="mb-3">
@@ -37,6 +37,7 @@
 
       <div class="mb-3">
         <label for="image" class="form-label">Post Image</label>
+        <input type="hidden" name="oldImage" value="{{ $post->image }}">
         @if($post->image)
         <img class="img-preview img-fluid mb-3 col-sm-5 d-block" src="{{ asset('storage/' . $post->image) }}">
         @else
@@ -84,7 +85,7 @@
       const image = document.querySelector('#image');
       const imgPreview = document.querySelector('.img-preview');
 
-      imagePreview.style.display = 'block';
+      imgPreview.style.display = 'block';
 
       const oFReader = new FileReader();
       oFReader.readAsDataURL(image.files[0]);
