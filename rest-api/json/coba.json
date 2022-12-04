@@ -1,0 +1,30 @@
+[
+{
+    "nama" : "Hafadz",
+    "umur" : 19,
+    "nrp" : "203040022",
+    "lulus" : false,
+    "hobby" :[
+        "gitar",
+        "gaming"
+    ],
+    "pembimbing" :{
+        "pembimbing1": "bpk....",
+        "pembimbing2" : "bpk...."
+    }
+},
+{
+    "nama" : "Hafadz",
+    "umur" : 19,
+    "nrp" : "203040022",
+    "lulus" : false,
+    "hobby" :[
+        "gitar",
+        "gaming"
+    ],
+    "pembimbing" :{
+        "pembimbing1": "bpk....",
+        "pembimbing2" : "bpk...."
+    }
+}
+]
